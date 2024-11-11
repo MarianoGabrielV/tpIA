@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clasificación No Supervisada</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    
+
+    <!-- Sección de presentación con GIF -->
+    <section id="presentacion" class="d-flex align-items-center justify-content-center">
+        <div class="overlay"></div>
+        <div class="content text-center">
+            <h1>Clasificación No Supervisada</h1>
+        </div>
+    </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Clasificación No Supervisada</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#introduccion">Introducción</a></li>
+                <li class="nav-item"><a class="nav-link" href="#algoritmos">Algoritmos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#desafios">Desafíos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección Introducción -->
+    <section id="introduccion" class="container mt-5 pt-5">
+        <h2 class="text-center">Introducción a la Clasificación No Supervisada</h2>
+        <p class="text-justify">
+            La clasificación no supervisada es un método de análisis de datos en el que el modelo agrupa datos sin etiquetas previas.
+            Su principal objetivo es descubrir patrones en datos no etiquetados y tiene múltiples aplicaciones en áreas como la segmentación de clientes y análisis de redes sociales.
+        </p>
+    </section>
+
+    <!-- Sección Algoritmos -->
+    <section id="algoritmos" class="container mt-5 pt-5">
+        <h2 class="text-center">Algoritmos y Métodos Comunes</h2>
+        <p class="text-justify">
+            Existen varios algoritmos en clasificación no supervisada, incluyendo:
+        </p>
+        <ul>
+            <li><strong>K-means</strong>: Método que agrupa datos en K clusters.</li>
+            <li><strong>Algoritmo de agrupamiento jerárquico</strong>: Utiliza dendogramas para construir clusters jerárquicos.</li>
+            <li><strong>DBSCAN</strong>: Útil para clusters de forma no esférica y detección de ruido.</li>
+            <li><strong>Reducción de Dimensionalidad</strong>: Técnicas como PCA y t-SNE que facilitan la visualización y análisis de datos complejos.</li>
+        </ul>
+    </section>
+
+    <!-- Sección Desafíos -->
+    <section id="desafios" class="container mt-5 pt-5 mb-5">
+        <h2 class="text-center">Desafíos y Limitaciones</h2>
+        <p class="text-justify">
+            La clasificación no supervisada presenta desafíos en la evaluación de resultados, como la dificultad de seleccionar el número de clusters adecuado en K-means
+            y la sensibilidad de DBSCAN a sus parámetros. También enfrenta limitaciones en la evaluación de la calidad de los clusters.
+        </p>
+        <p class="text-justify">
+            Algunos avances en este campo incluyen redes neuronales para clustering y autoencoders, que continúan mejorando el análisis de datos no etiquetados.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Clasificación No Supervisada - Proyecto Universitario</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
