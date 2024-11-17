@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Agrupamiento Visual</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilo general */
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        h2 {
+            color: #00aaff; /* Color azul para el título */
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .shape {
+            width: 60px;
+            height: 60px;
+            cursor: move;
+            display: inline-block;
+            margin: 10px;
+        }
+        .circle { border-radius: 50%; }
+        .star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color: currentColor;
+        }
+        .group-area {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #888;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            color: #fff;
+        }
+        .feedback {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+        /* Colores */
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+    </style>
+</head>
+<body>
+
+<h2>Juego de Agrupamiento Visual</h2>
+<p class="text-center">Arrastra y suelta las figuras en las áreas de agrupación según un criterio que observes (forma o color). Luego, verifica si has encontrado un patrón lógico.</p>
+
+<div class="container">
+    <!-- Figuras geométricas para agrupar -->
+    <div class="shape circle red" draggable="true" ondragstart="drag(event)" id="circleRed"></div>
+    <div class="shape square blue" draggable="true" ondragstart="drag(event)" id="squareBlue"></div>
+    <div class="shape star green" draggable="true" ondragstart="drag(event)" id="starGreen"></div>
+    <div class="shape circle green" draggable="true" ondragstart="drag(event)" id="circleGreen"></div>
+    <div class="shape square red" draggable="true" ondragstart="drag(event)" id="squareRed"></div>
+    <div class="shape star blue" draggable="true" ondragstart="drag(event)" id="starBlue"></div>
+    <div class="shape circle blue" draggable="true" ondragstart="drag(event)" id="circleBlue"></div>
+</div>
+
+<!-- Áreas de agrupación -->
+<div class="text-center">
+    <div class="group-area" ondrop="drop(event)" ondragover="allowDrop(event)" id="group1">Grupo 1</div>
+    <div class="group-area" ondrop="drop(event)" ondragover="allowDrop(event)" id="group2">Grupo 2</div>
+    <div class="group-area" ondrop="drop(event)" ondragover="allowDrop(event)" id="group3">Grupo 3</div>
+</div>
+
+<p class="feedback text-center" id="feedback"></p>
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(data));
+        checkGrouping();
+    }
+
+    function checkGrouping() {
+        const group1 = document.getElementById("group1").children;
+        const group2 = document.getElementById("group2").children;
+        const group3 = document.getElementById("group3").children;
+        const feedback = document.getElementById("feedback");
+
+        const isGroup1Uniform = checkUniformity(group1);
+        const isGroup2Uniform = checkUniformity(group2);
+        const isGroup3Uniform = checkUniformity(group3);
+
+        if (isGroup1Uniform && isGroup2Uniform && isGroup3Uniform) {
+            feedback.textContent = "¡Bien hecho! Has encontrado una agrupación lógica.";
+            feedback.style.color = "#00aaff"; /* Azul para éxito */
+        } else {
+            feedback.textContent = "Prueba otra forma de agrupar (por color o forma).";
+            feedback.style.color = "red";
+        }
+    }
+
+    function checkUniformity(group) {
+        if (group.length === 0) return false;
+
+        const firstColor = getComputedStyle(group[0]).backgroundColor;
+        const firstShape = Array.from(group[0].classList).find(cls => cls === "circle" || cls === "square" || cls === "star");
+
+        let uniformByColor = true;
+        let uniformByShape = true;
+
+        for (let i = 1; i < group.length; i++) {
+            const itemColor = getComputedStyle(group[i]).backgroundColor;
+            const itemShape = Array.from(group[i].classList).find(cls => cls === "circle" || cls === "square" || cls === "star");
+
+            if (itemColor !== firstColor) {
+                uniformByColor = false;
+            }
+
+            if (itemShape !== firstShape) {
+                uniformByShape = false;
+            }
+        }
+
+        return uniformByColor || uniformByShape;
+    }
+</script>
+
+</body>
+</html>

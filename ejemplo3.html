@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Segmentación de Clientes</title>
+    <style>
+        /* Estilo general */
+        body {
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto en blanco */
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #00aaff; /* Título en azul */
+            text-align: center;
+            margin-top: 20px;
+        }
+        p {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .client {
+            border: 1px solid #00aaff; /* Borde en azul */
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #333; /* Fondo gris oscuro */
+            color: #fff; /* Texto en blanco */
+        }
+        .group {
+            border: 2px dashed #888;
+            width: 150px;
+            height: 250px;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            background-color: #222; /* Fondo ligeramente oscuro */
+        }
+        .feedback {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Segmentación de Clientes</h2>
+<p>Arrastra cada cliente al grupo correspondiente según sus preferencias de compra.</p>
+
+<div class="container">
+    <!-- Clientes a clasificar -->
+    <div class="client" draggable="true" ondragstart="drag(event)" id="cliente1">Eli: Musculosas, Aritos</div>
+    <div class="client" draggable="true" ondragstart="drag(event)" id="cliente2">Tade: Papas Fritas, Fernet</div>
+    <div class="client" draggable="true" ondragstart="drag(event)" id="cliente3">Gabi: Computadoras de Escritorio, Heladeras</div>
+    <div class="client" draggable="true" ondragstart="drag(event)" id="cliente4">Flav: Helados, IPA</div>
+    <div class="client" draggable="true" ondragstart="drag(event)" id="cliente5">Mau: Remeras, Gafas de sol</div>
+    <div class="client" draggable="true" ondragstart="drag(event)" id="cliente6">Kali: Cerveza, Snacks</div>
+    <div class="client" draggable="true" ondragstart="drag(event)" id="cliente7">Jor: Camaras de seguridad, Sillones</div>
+</div>
+
+<!-- Grupos de Segmentos -->
+<div class="container">
+    <div class="group" ondrop="drop(event)" ondragover="allowDrop(event)" id="group1">Grupo 1: Ropa/Accesorios</div>
+    <div class="group" ondrop="drop(event)" ondragover="allowDrop(event)" id="group2">Grupo 2: Comida/Bebidas</div>
+    <div class="group" ondrop="drop(event)" ondragover="allowDrop(event)" id="group3">Grupo 3: Electrónica/Hogar</div>
+</div>
+
+<p class="feedback" id="feedback"></p>
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(data));
+        checkGrouping();
+    }
+
+    function checkGrouping() {
+        const group1 = document.getElementById("group1").children;
+        const group2 = document.getElementById("group2").children;
+        const group3 = document.getElementById("group3").children;
+        const feedback = document.getElementById("feedback");
+
+        // Condiciones de agrupación correcta
+        const correctGroup1 = ["cliente1", "cliente5"];
+        const correctGroup2 = ["cliente2", "cliente4", "cliente6"];
+        const correctGroup3 = ["cliente3", "cliente7"];
+
+        const isGroup1Correct = checkGroup(group1, correctGroup1);
+        const isGroup2Correct = checkGroup(group2, correctGroup2);
+        const isGroup3Correct = checkGroup(group3, correctGroup3);
+
+        if (isGroup1Correct && isGroup2Correct && isGroup3Correct) {
+            feedback.textContent = "¡Bien hecho! Has segmentado a los clientes correctamente.";
+            feedback.style.color = "#00aaff"; /* Azul para éxito */
+        } else {
+            feedback.textContent = "Intenta agrupar de nuevo. Revisa las preferencias de compra.";
+            feedback.style.color = "red";
+        }
+    }
+
+    function checkGroup(group, correctGroup) {
+        if (group.length !== correctGroup.length) return false;
+
+        for (let i = 0; i < group.length; i++) {
+            if (!correctGroup.includes(group[i].id)) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

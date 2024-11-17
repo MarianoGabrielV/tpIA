@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparación Práctica: Clasificación Supervisada vs No Supervisada</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto en blanco */
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #00aaff; /* Título en azul */
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.8em; /* Tamaño del título más grande */
+        }
+
+        .card {
+            width: 350px; /* Aumenta el ancho de la tarjeta */
+            border: 1px solid #333; /* Borde más oscuro */
+            padding: 25px; /* Aumenta el padding */
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+            background-color: #222; /* Fondo de tarjeta en gris oscuro */
+        }
+
+        .card p {
+            color: #fff; /* Texto blanco */
+            font-size: 1.2em; /* Aumenta el tamaño de la fuente en el texto */
+        }
+
+        button {
+            background-color: #00aaff; /* Botón en azul */
+            color: #fff; /* Texto del botón en blanco */
+            border: none;
+            padding: 12px 18px; /* Aumenta el padding del botón */
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em; /* Aumenta el tamaño de la fuente en los botones */
+        }
+
+        button:hover {
+            background-color: #0077cc; /* Color más oscuro al pasar el ratón */
+        }
+
+        .feedback {
+            color: #00ff00; /* Verde para el mensaje correcto */
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.1em; /* Aumenta el tamaño de la fuente del feedback */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Comparación Práctica: Clasificación Supervisada vs No Supervisada</h2>
+
+<div class="card">
+    <p> Un sistema de detección de fraude en transacciones bancarias utiliza un conjunto de transacciones etiquetadas como "fraudulentas" o "legítimas".</p>
+    <button onclick="checkAnswer(1, 'supervisada')">Clasificación Supervisada</button>
+    <button onclick="checkAnswer(1, 'no-supervisada')">Clasificación No Supervisada</button>
+    <p id="feedback-1" class="feedback"></p>
+</div>
+
+<div class="card">
+    <p> Un minorista quiere encontrar patrones de compra en sus clientes sin etiquetas previas.</p>
+    <button onclick="checkAnswer(2, 'supervisada')">Clasificación Supervisada</button>
+    <button onclick="checkAnswer(2, 'no-supervisada')">Clasificación No Supervisada</button>
+    <p id="feedback-2" class="feedback"></p>
+</div>
+
+<div class="card">
+    <p> Un sistema de correo electrónico clasifica automáticamente los correos como "spam" o "no spam" basado en correos etiquetados previamente.</p>
+    <button onclick="checkAnswer(3, 'supervisada')">Clasificación Supervisada</button>
+    <button onclick="checkAnswer(3, 'no-supervisada')">Clasificación No Supervisada</button>
+    <p id="feedback-3" class="feedback"></p>
+</div>
+
+<div class="card">
+    <p> Una aplicación de noticias agrupa artículos similares en temas sin etiquetarlos de antemano.</p>
+    <button onclick="checkAnswer(4, 'supervisada')">Clasificación Supervisada</button>
+    <button onclick="checkAnswer(4, 'no-supervisada')">Clasificación No Supervisada</button>
+    <p id="feedback-4" class="feedback"></p>
+</div>
+
+<script>
+function checkAnswer(example, answer) {
+    let feedback = document.getElementById(`feedback-${example}`);
+    if ((example === 1 && answer === 'supervisada') || 
+        (example === 2 && answer === 'no-supervisada') || 
+        (example === 3 && answer === 'supervisada') || 
+        (example === 4 && answer === 'no-supervisada')) {
+        feedback.textContent = "Correcto: Este es un ejemplo de " + (answer === 'supervisada' ? "Clasificación Supervisada." : "Clasificación No Supervisada.");
+        feedback.style.color = "#00ff00"; /* Verde para mensaje correcto */
+    } else {
+        feedback.textContent = "Incorrecto. Intenta de nuevo.";
+        feedback.style.color = "#ff0000"; /* Rojo para mensaje incorrecto */
+    }
+}
+</script>
+
+</body>
+</html>

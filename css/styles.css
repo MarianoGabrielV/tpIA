@@ -5,6 +5,8 @@ section {
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #000; /* Fondo negro para todo el cuerpo */
+    color: white; /* Cambia el color del texto a blanco para mayor contraste */
 }
 
 h2 {
@@ -18,14 +20,14 @@ ul {
 
 footer {
     margin-top: 50px;
+    background-color: #000; /* Asegura que el fondo del footer también sea negro */
 }
-
 
 /* Sección de presentación con GIF */
 #presentacion {
     position: relative;
     height: 100vh;
-    background: url('../img/gifdefondo.gif') center center/cover no-repeat; /* Ruta al archivo GIF */
+    background: url('../img/gifdefondo.gif') center center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
