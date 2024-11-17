@@ -14,6 +14,13 @@
             <h1 id="typing-effect"></h1> <!-- Cambiamos el h1 para usar el efecto -->
         </div>
     </section>
+        <!-- Sección de Video Introductorio -->
+    <section id="video-intro" class="text-center p-4">
+        <h2>Introducción al Tema</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/oT3arRRB2Cw?si=w4y0FDfMJ5_c7VDv" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">TP.Final IA</a>
@@ -55,9 +62,7 @@
             Descubrimiento de Patrones: Detectar relaciones desconocidas entre variables.<br>
             Agrupamiento y Segmentación: Crear grupos de datos similares, como diferentes tipos de usuarios o productos.<br>
             Reducción de Dimensionalidad: Simplificar datos complejos manteniendo su información esencial.<br>
-            Ejemplo de Aplicación:<br>
-
-            Un algoritmo de clasificación no supervisada podría descubrir segmentos de clientes en una tienda en línea que no se habían identificado, revelando comportamientos de compra nuevos
+            
         </p>
         <div class="text-center mt-3">
             <a href="ejemplo2.html" target="_blank" class="btn btn-primary">Actividad para la clase</a>
@@ -75,11 +80,7 @@
             Análisis de Redes Sociales:<br>
 
             Agrupa publicaciones o usuarios en temas o comunidades según patrones de interacción o palabras clave.<br>
-            Ejemplo: Un algoritmo agrupa tweets por temáticas para estudiar tendencias de opinión en tiempo real.<br>
-            Agrupamiento de Imágenes:<br>
-
-            Clasifica imágenes en categorías según sus características visuales, útil en sistemas de reconocimiento visual y almacenamiento de fotos.<br>
-            Ejemplo: Un sistema de clasificación en una red social agrupa fotos de paisajes, retratos, y eventos deportivos sin etiquetas previas.<br>
+            
         </p>
         <div class="text-center mt-3">
             <a href="ejemplo3.html" target="_blank" class="btn btn-primary mt-3">Actividad para la clase</a>
@@ -92,14 +93,45 @@
     <section id="algoritmos" class="container mt-5 pt-5">
         <h2 class="text-center">Algoritmos y Métodos Comunes</h2>
         <p class="text-justify">
-            Existen varios algoritmos en clasificación no supervisada, incluyendo:
+            <strong>K-means</strong> es un método de agrupamiento (o clustering) en el que se dividen datos en grupos basándose en su similitud. Imagina que tienes un montón de puntos en un papel y quieres organizarlos en grupos según qué tan cerca están unos de otros.<br>
+            <strong>Pasos básicos:</strong><br>
+            <ul>
+            <li>Eliges el número de grupos (k) que quieres formar.</li>
+            <li>Colocas "centros" (o puntos iniciales) para esos grupos al azar.</li>
+            <li>Cada punto de los datos se asigna al centro más cercano.</li>
+            <li>Calculas un nuevo "centro" para cada grupo tomando el promedio de los puntos asignados a ese grupo.</li>
+            <li>Repites los pasos 3 y 4 hasta que los grupos no cambien mucho.</li>
+            </ul>
+            <strong>Resultado:</strong><br>
+            Al final, los datos quedan divididos en k grupos, con cada punto más cerca del centro de su grupo que de cualquier otro centro.
+            Es como organizar cosas en cajones según qué tan parecidas son. <br>
+            <br>
+            <strong> DBSCAN</strong> es otro método de <strong>agrupamiento</strong>, pero diferente a K-means. Este encuentra grupos basándose en densidad (qué tan juntos están los puntos). Es útil porque no necesitas decirle cuántos grupos buscar y puede manejar mejor datos con formas raras o ruido.<br>
+            Pasos básicos:<br>
+            <ul>
+            <li>Define un radio (eps) y un número mínimo de puntos (minPts).</li>
+                <ul>
+                    <li>"Radio" es el tamaño de la vecindad.</li>
+                    <li>"Mínimo de puntos" es cuántos vecinos necesitas para formar un grupo.</li>
+                </ul>
+            <li>Para cada punto, mira cuántos vecinos tiene dentro del radio.</li>
+            <li>Si tiene al menos minPts vecinos, es un punto central y empieza un grupo.</li>
+            <li>Si no tiene suficientes vecinos, podría ser un punto de ruido (o solitario).</li>
+            <li>Los puntos cercanos a un punto central se agrupan, expandiendo el grupo poco a poco, conectando los que cumplen la regla.</li>
+            <li>Los puntos que no logran formar parte de ningún grupo porque están aislados quedan como ruido.</li>
+            </ul>
+            <strong>Resultado:</strong><br>
+            Terminas con grupos basados en áreas densas y puedes ignorar los puntos que no encajan bien.
+            Es como juntar "manchones" de cosas muy apretadas y dejar fuera las que están solitas.
+
         </p>
-        <ul>
-            <li><strong>K-means</strong>: Método que agrupa datos en K clusters.</li>
-            <li><strong>Algoritmo de agrupamiento jerárquico</strong>: Utiliza dendogramas para construir clusters jerárquicos.</li>
-            <li><strong>DBSCAN</strong>: Útil para clusters de forma no esférica y detección de ruido.</li>
-            <li><strong>Reducción de Dimensionalidad</strong>: Técnicas como PCA y t-SNE que facilitan la visualización y análisis de datos complejos.</li>
-        </ul>
+         <!-- Botón para acceder a Colab -->
+    <div class="text-center mt-4">
+        <a href="https://colab.research.google.com/drive/1r7xLW9G_Grul25m5Hbp0j06SuDu9ZaRU?usp=sharing" target="_blank" class="btn btn-primary">
+            Acceder al Proyecto en Colab
+        </a>
+    </div>
+        
     </section>
 
     <!-- Sección Desafíos -->
