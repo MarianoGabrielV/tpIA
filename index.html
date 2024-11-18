@@ -16,7 +16,7 @@
     </section>
         <!-- Sección de Video Introductorio -->
     <section id="video-intro" class="text-center p-4">
-        <h2>Introducción al Tema</h2>
+        <h2><strong>Introducción al Tema</strong></h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/oT3arRRB2Cw?si=w4y0FDfMJ5_c7VDv" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -38,46 +38,48 @@
 
     <!-- Sección Introducción -->
     <section id="introduccion" class="container mt-5 pt-5">
-        <h2 class="text-center">Introducción a la Clasificación No Supervisada</h2>
+        <h2 class="text-center"><strong>Introducción a la Clasificación No Supervisada</strong></h2>
         <p class="text-justify">
             
-            
-            La Clasificación No Supervisada es una técnica en la que se analizan datos sin etiquetas predefinidas. A diferencia de la clasificación supervisada, donde se entrenan modelos con datos etiquetados, aquí los algoritmos exploran los datos para encontrar patrones o agrupaciones sin guiarse por respuestas correctas. Esto la hace ideal para datos en los que no existe información previa sobre la clasificación.<br>
+            <strong>La Clasificación No Supervisada</strong> es una técnica en la que se analizan datos sin etiquetas predefinidas. A diferencia de la clasificación supervisada, donde se entrenan modelos con datos etiquetados, <strong>aquí los algoritmos</strong> exploran los datos para encontrar patrones o agrupaciones sin guiarse por respuestas correctas. <strong>Esto la hace ideal para datos en los que no existe información previa sobre la clasificación</strong>.<br>
 
-            Ejemplo Comparativo:<br>
+            <strong>Ejemplo Comparativo:</strong><br>
 
-            Clasificación Supervisada: Clasificar emails como “spam” o “no spam” basado en un conjunto de datos previamente etiquetado.<br>
-            Clasificación No Supervisada: Agrupar artículos de noticias según temas sin haber definido previamente los temas de interés.
+            <strong>Clasificación Supervisada:</strong> Clasificar emails como “spam” o “no spam” basado en un conjunto de datos previamente etiquetado.<br>
+            <strong>Clasificación No Supervisada:</strong> Agrupar artículos de noticias según temas sin haber definido previamente los temas de interés.
             
         </p>
         <div class="text-center mt-3">
             <a href="ejemplo1.html" target="_blank" class="btn btn-primary mt-3">Actividad para la clase</a>
         </div>
+        <br>
         <p>
-            Objetivos de la Clasificación No Supervisada<br>
+            <strong>Objetivos de la Clasificación No Supervisada</strong><br>
             
-            La clasificación no supervisada es fundamental en el análisis exploratorio de datos. Su objetivo principal es descubrir patrones ocultos en los datos y agrupar elementos similares para entender mejor la estructura interna de los datos.<br>
+            La clasificación no supervisada es fundamental en el análisis exploratorio de datos. <strong>Su objetivo principal</strong> es descubrir patrones ocultos en los datos y agrupar elementos similares para entender mejor la estructura interna de los datos.<br>
 
-            Objetivos Clave<br>
-            Descubrimiento de Patrones: Detectar relaciones desconocidas entre variables.<br>
-            Agrupamiento y Segmentación: Crear grupos de datos similares, como diferentes tipos de usuarios o productos.<br>
-            Reducción de Dimensionalidad: Simplificar datos complejos manteniendo su información esencial.<br>
+            <strong>Objetivos Clave</strong><br>
+            <strong>Descubrimiento de Patrones:</strong> Detectar relaciones desconocidas entre variables.<br>
+            <strong>Agrupamiento y Segmentación:</strong> Crear grupos de datos similares, como diferentes tipos de usuarios o productos.<br>
+            <strong>Reducción de Dimensionalidad:</strong> Simplificar datos complejos manteniendo su información esencial.<br>
             
         </p>
+
         <div class="text-center mt-3">
             <a href="ejemplo2.html" target="_blank" class="btn btn-primary">Actividad para la clase</a>
         </div>
+        <br>
         <p>
-            Aplicaciones en el Mundo Real<br>
+            <strong>Aplicaciones en el Mundo Real</strong><br>
             
             La clasificación no supervisada se aplica en diversas áreas de la industria y la investigación. <br>
          
 
-            Segmentación de Clientes:<br>
+            <strong>Segmentación de Clientes:</strong><br>
 
             Permite a las empresas agrupar a sus clientes en diferentes segmentos para ofrecer promociones y productos personalizados.<br>
-            Ejemplo: Un minorista en línea utiliza agrupamientos para identificar clientes con intereses similares y personalizar sus campañas de marketing.<br>
-            Análisis de Redes Sociales:<br>
+            <strong>Ejemplo:</strong> Un minorista en línea utiliza agrupamientos para identificar clientes con intereses similares y personalizar sus campañas de marketing.<br>
+            <strong>Análisis de Redes Sociales:</strong><br>
 
             Agrupa publicaciones o usuarios en temas o comunidades según patrones de interacción o palabras clave.<br>
             
@@ -91,34 +93,36 @@
 
     <!-- Sección Algoritmos -->
     <section id="algoritmos" class="container mt-5 pt-5">
-        <h2 class="text-center">Algoritmos y Métodos Comunes</h2>
+        <h2 class="text-center"><strong>Algoritmos y Métodos Comunes</strong></h2>
         <p class="text-justify">
-            <strong>K-means</strong> es un método de agrupamiento (o clustering) en el que se dividen datos en grupos basándose en su similitud. Imagina que tienes un montón de puntos en un papel y quieres organizarlos en grupos según qué tan cerca están unos de otros.<br>
+            <strong>K-means</strong> es un método de <strong>agrupamiento</strong> (o clustering) en el que se dividen datos en <strong>grupos</strong> basándose en su <strong>similitud</strong>. Imagina que tienes un montón de puntos en un papel y quieres organizarlos en grupos según qué tan cerca están unos de otros.<br>
             <strong>Pasos básicos:</strong><br>
             <ul>
-            <li>Eliges el número de grupos (k) que quieres formar.</li>
-            <li>Colocas "centros" (o puntos iniciales) para esos grupos al azar.</li>
+            <li><strong>Eliges el número de grupos (k)</strong> que quieres formar.</li>
+            <li><strong>Colocas "centros" (o puntos iniciales)</strong> para esos grupos al azar.</li>
             <li>Cada punto de los datos se asigna al centro más cercano.</li>
             <li>Calculas un nuevo "centro" para cada grupo tomando el promedio de los puntos asignados a ese grupo.</li>
             <li>Repites los pasos 3 y 4 hasta que los grupos no cambien mucho.</li>
             </ul>
             <strong>Resultado:</strong><br>
-            Al final, los datos quedan divididos en k grupos, con cada punto más cerca del centro de su grupo que de cualquier otro centro.
+            Al final, los datos quedan divididos en <Strong>k grupos</Strong>, con cada punto más cerca del centro de su grupo que de cualquier otro centro.
             Es como organizar cosas en cajones según qué tan parecidas son. <br>
             <br>
             <strong> DBSCAN</strong> es otro método de <strong>agrupamiento</strong>, pero diferente a K-means. Este encuentra grupos basándose en densidad (qué tan juntos están los puntos). Es útil porque no necesitas decirle cuántos grupos buscar y puede manejar mejor datos con formas raras o ruido.<br>
-            Pasos básicos:<br>
+            <strong>Pasos básicos:</strong><br>
             <ul>
-            <li>Define un radio (eps) y un número mínimo de puntos (minPts).</li>
+            <li><strong>Define un radio (eps)</strong> y un número mínimo de puntos (minPts).</li>
                 <ul>
                     <li>"Radio" es el tamaño de la vecindad.</li>
                     <li>"Mínimo de puntos" es cuántos vecinos necesitas para formar un grupo.</li>
                 </ul>
-            <li>Para cada punto, mira cuántos vecinos tiene dentro del radio.</li>
-            <li>Si tiene al menos minPts vecinos, es un punto central y empieza un grupo.</li>
-            <li>Si no tiene suficientes vecinos, podría ser un punto de ruido (o solitario).</li>
+            <li><strong>Para cada punto</strong>, mira cuántos vecinos tiene dentro del radio.</li>
+            <ul>
+                <li>Si tiene al menos minPts vecinos, es un <strong>punto central</strong> y empieza un grupo.</li>
+                <li>Si no tiene suficientes vecinos, podría ser un <strong>punto de ruido</strong> (o solitario).</li>
+            </ul>
             <li>Los puntos cercanos a un punto central se agrupan, expandiendo el grupo poco a poco, conectando los que cumplen la regla.</li>
-            <li>Los puntos que no logran formar parte de ningún grupo porque están aislados quedan como ruido.</li>
+            <li>Los puntos que no logran formar parte de ningún grupo porque están aislados quedan como <strong>ruido</strong>.</li>
             </ul>
             <strong>Resultado:</strong><br>
             Terminas con grupos basados en áreas densas y puedes ignorar los puntos que no encajan bien.
@@ -136,7 +140,7 @@
 
     <!-- Sección Desafíos -->
     <section id="desafios" class="container mt-5 pt-5 mb-5">
-        <h2 class="text-center">Desafíos y Limitaciones</h2>
+        <h2 class="text-center"><strong>Desafíos y Limitaciones</strong></h2>
         <p class="text-justify">
             La clasificación no supervisada presenta desafíos en la evaluación de resultados, como la dificultad de seleccionar el número de clusters adecuado en K-means
             y la sensibilidad de DBSCAN a sus parámetros. También enfrenta limitaciones en la evaluación de la calidad de los clusters.
