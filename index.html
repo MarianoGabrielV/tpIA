@@ -6,16 +6,19 @@
     <title>Clasificación No Supervisada</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="presentacion" class="d-flex align-items-center justify-content-center">
+    <section id="presentacion" class="d-flex align-items-center justify-content-center lato-black-italic">
         <div class="overlay"></div>
         <div class="content text-center">
             <h1 id="typing-effect"></h1> <!-- Cambiamos el h1 para usar el efecto -->
         </div>
     </section>
         <!-- Sección de Video Introductorio -->
-    <section id="video-intro" class="text-center p-4">
+    <section id="video-intro" class="text-center p-4 lato-black-italic">
         <h2><strong>Introducción al Tema</strong></h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/oT3arRRB2Cw?si=w4y0FDfMJ5_c7VDv" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -23,23 +26,23 @@
     </section>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">TP.Final IA</a>
+        <a class="navbar-brand lato-bold" href="#">TP.Final IA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#introduccion">Introducción</a></li>
-                <li class="nav-item"><a class="nav-link" href="#algoritmos">Algoritmos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#desafios">Desafíos</a></li>
+                <li class="nav-item lato-bold"><a class="nav-link" href="#introduccion">Introducción</a></li>
+                <li class="nav-item lato-bold"><a class="nav-link" href="#algoritmos">Algoritmos</a></li>
+                <li class="nav-item lato-bold"><a class="nav-link" href="#desafios">Desafíos</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Sección Introducción -->
-    <section id="introduccion" class="container mt-5 pt-5">
-        <h2 class="text-center"><strong>Introducción a la Clasificación No Supervisada</strong></h2>
-        <p class="text-justify">
+    <section id="introduccion" class="container mt-5 pt-5 ">
+        <h2 class="text-center lato-black-italic"><strong>Introducción a la Clasificación No Supervisada</strong></h2>
+        <p class="text-justify alegreya-sans-bold">
             
             <strong>La Clasificación No Supervisada</strong> es una técnica en la que se analizan datos sin etiquetas predefinidas. A diferencia de la clasificación supervisada, donde se entrenan modelos con datos etiquetados, <strong>aquí los algoritmos</strong> exploran los datos para encontrar patrones o agrupaciones sin guiarse por respuestas correctas. <strong>Esto la hace ideal para datos en los que no existe información previa sobre la clasificación</strong>.<br>
 
@@ -50,10 +53,10 @@
             
         </p>
         <div class="text-center mt-3">
-            <a href="ejemplo1.html" target="_blank" class="btn btn-primary mt-3">Actividad para la clase</a>
+            <a href="ejemplo1.html" target="_blank" class="btn btn-primary mt-3 alegreya-sans-regular">Actividad para la clase</a>
         </div>
         <br>
-        <p>
+        <p class="text-justify alegreya-sans-bold">
             <strong>Objetivos de la Clasificación No Supervisada</strong><br>
             
             La clasificación no supervisada es fundamental en el análisis exploratorio de datos. <strong>Su objetivo principal</strong> es descubrir patrones ocultos en los datos y agrupar elementos similares para entender mejor la estructura interna de los datos.<br>
@@ -66,10 +69,10 @@
         </p>
 
         <div class="text-center mt-3">
-            <a href="ejemplo2.html" target="_blank" class="btn btn-primary">Actividad para la clase</a>
+            <a href="ejemplo2.html" target="_blank" class="btn btn-primary alegreya-sans-regular">Actividad para la clase</a>
         </div>
         <br>
-        <p>
+        <p class="text-justify alegreya-sans-bold">
             <strong>Aplicaciones en el Mundo Real</strong><br>
             
             La clasificación no supervisada se aplica en diversas áreas de la industria y la investigación. <br>
@@ -85,7 +88,7 @@
             
         </p>
         <div class="text-center mt-3">
-            <a href="ejemplo3.html" target="_blank" class="btn btn-primary mt-3">Actividad para la clase</a>
+            <a href="ejemplo3.html" target="_blank" class="btn btn-primary mt-3 alegreya-sans-regular">Actividad para la clase</a>
         </div>
         
         
@@ -93,24 +96,29 @@
 
     <!-- Sección Algoritmos -->
     <section id="algoritmos" class="container mt-5 pt-5">
-        <h2 class="text-center"><strong>Algoritmos y Métodos Comunes</strong></h2>
-        <p class="text-justify">
+        <h2 class="text-center lato-black-italic"><strong>Algoritmos y Métodos Comunes</strong></h2>
+        <p class="text-justify alegreya-sans-bold">
             <strong>K-means</strong> es un método de <strong>agrupamiento</strong> (o clustering) en el que se dividen datos en <strong>grupos</strong> basándose en su <strong>similitud</strong>. Imagina que tienes un montón de puntos en un papel y quieres organizarlos en grupos según qué tan cerca están unos de otros.<br>
             <strong>Pasos básicos:</strong><br>
-            <ul>
+            <ul class="alegreya-sans-bold">
             <li><strong>Eliges el número de grupos (k)</strong> que quieres formar.</li>
             <li><strong>Colocas "centros" (o puntos iniciales)</strong> para esos grupos al azar.</li>
             <li>Cada punto de los datos se asigna al centro más cercano.</li>
             <li>Calculas un nuevo "centro" para cada grupo tomando el promedio de los puntos asignados a ese grupo.</li>
             <li>Repites los pasos 3 y 4 hasta que los grupos no cambien mucho.</li>
             </ul>
-            <strong>Resultado:</strong><br>
+        </p>
+        <p class="alegreya-sans-bold">
+            <strong class="alegreya-sans-bold">Resultado:</strong><br>
             Al final, los datos quedan divididos en <Strong>k grupos</Strong>, con cada punto más cerca del centro de su grupo que de cualquier otro centro.
             Es como organizar cosas en cajones según qué tan parecidas son. <br>
+        </p>
             <br>
+        <p class="alegreya-sans-bold">
             <strong> DBSCAN</strong> es otro método de <strong>agrupamiento</strong>, pero diferente a K-means. Este encuentra grupos basándose en densidad (qué tan juntos están los puntos). Es útil porque no necesitas decirle cuántos grupos buscar y puede manejar mejor datos con formas raras o ruido.<br>
             <strong>Pasos básicos:</strong><br>
-            <ul>
+        </p>
+            <ul class="alegreya-sans-bold">
             <li><strong>Define un radio (eps)</strong> y un número mínimo de puntos (minPts).</li>
                 <ul>
                     <li>"Radio" es el tamaño de la vecindad.</li>
@@ -124,13 +132,14 @@
             <li>Los puntos cercanos a un punto central se agrupan, expandiendo el grupo poco a poco, conectando los que cumplen la regla.</li>
             <li>Los puntos que no logran formar parte de ningún grupo porque están aislados quedan como <strong>ruido</strong>.</li>
             </ul>
+        <p class="alegreya-sans-bold">
             <strong>Resultado:</strong><br>
             Terminas con grupos basados en áreas densas y puedes ignorar los puntos que no encajan bien.
             Es como juntar "manchones" de cosas muy apretadas y dejar fuera las que están solitas.
-
+        </p>
         </p>
          <!-- Botón para acceder a Colab -->
-    <div class="text-center mt-4">
+    <div class="text-center mt-4 alegreya-sans-regular">
         <a href="https://colab.research.google.com/drive/1r7xLW9G_Grul25m5Hbp0j06SuDu9ZaRU?usp=sharing" target="_blank" class="btn btn-primary">
             Acceder al Proyecto en Colab
         </a>
@@ -140,7 +149,7 @@
 
     <!-- Sección Desafíos -->
     <section id="desafios" class="container mt-5 pt-5 mb-5">
-        <h2 class="text-center"><strong>Desafíos y Limitaciones</strong></h2>
+        <h2 class="text-center lato-black-italic"><strong>Desafíos y Limitaciones</strong></h2>
         <p class="text-justify">
             La clasificación no supervisada presenta desafíos en la evaluación de resultados, como la dificultad de seleccionar el número de clusters adecuado en K-means
             y la sensibilidad de DBSCAN a sus parámetros. También enfrenta limitaciones en la evaluación de la calidad de los clusters.
